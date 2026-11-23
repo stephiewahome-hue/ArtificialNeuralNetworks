@@ -157,7 +157,7 @@ Inputs are the numbers entering the neuron.
 
 For example:
 
-$$[ x_1=2,\quad x_2=-1,\quad x_3=3 \\]$$
+$$[ x_1=2,\quad x_2=-1,\quad x_3=3 \]$$
 
 ### **B. Weights (w)**
 
@@ -165,7 +165,7 @@ Weights determine how strongly each input influences the result.
 
 For example:
 
-$$[ w_1=0.8,\quad w_2=0.3,\quad w_3=0.5 \\]$$
+$$[ w_1=0.8,\quad w_2=0.3,\quad w_3=0.5 \]$$
 
 A larger absolute weight means a stronger influence in the calculation.
 
@@ -177,7 +177,7 @@ Bias is an additional number added to the weighted sum.
 
 For example:
 
-\\[ b=0.5 \\]
+$$[ b=0.5 \]$$
 
 It helps shift the neuron's output.
 
@@ -211,29 +211,29 @@ We have three inputs:
 
 First, multiply each input by its weight.
 
-\\[ (2\times0.8)=1.6 \\]
+$$[ (2\times0.8)=1.6 \]$$
 
-\\[ (-1\times0.3)=-0.3 \\]
+$$[ (-1\times0.3)=-0.3 \]$$
 
-\\[ (3\times0.5)=1.5 \\]
+$$[ (3\times0.5)=1.5 \]$$
 
 Add the results:
 
-\\[ 1.6-0.3+1.5=2.8 \\]
+$$[ 1.6-0.3+1.5=2.8 \]$$
 
 Add the bias:
 
-\\[ 2.8+0.5=3.3 \\]
+$$[ 2.8+0.5=3.3 \]$$
 
 The threshold is 3.0.
 
 Since:
 
-\\[ 3.3>3.0 \\]
+$$[ 3.3>3.0 \]$$
 
 The neuron fires.
 
-\\[ \boxed{Output=1} \\]
+$$[ \boxed{Output=1} \]$$
 
 The important lesson: inputs are multiplied by weights, combined, adjusted by bias and passed through an activation function.
 
@@ -298,17 +298,17 @@ We have three customer features.
 
 **Initial parameters**
 
-\\[ w_1=0.5 \\]
+$$[ w_1=0.5 \]$$
 
-\\[ w_2=-0.2 \\]
+$$[ w_2=-0.2 \]$$
 
-\\[ w_3=0.4 \\]
+$$[ w_3=0.4 \]$$
 
-\\[ b=0.1 \\]
+$$[ b=0.1 \]$$
 
 **Learning rate**
 
-\\[ \alpha=0.1 \\]
+$$[ \alpha=0.1 \]$$
 
 Let's understand the values.
 
@@ -320,7 +320,7 @@ Let's understand the values.
 
 Our actual target is:
 
-\\[ y=0 \\]
+$$[ y=0 \]$$
 
 For this example, 0 means the customer did not abandon the cart.
 
@@ -336,7 +336,7 @@ The PDF uses a single artificial neuron:
 
 The process is:
 
-\\[ X\rightarrow z\rightarrow \sigma(z)\rightarrow\hat y \\]
+$$[ X\rightarrow z\rightarrow \sigma(z)\rightarrow\hat y \]$$
 
 Where:
 
@@ -355,7 +355,7 @@ Predicts continuous numerical values.
 
 For example, predicting someone's salary or a company's sales.
 
-\\[ y=wx+b \\]
+$$[ y=wx+b \]$$
 
 **Logistic regression**
 
@@ -376,7 +376,7 @@ Forward propagation begins by combining the customer information.
 
 The formula from page 10 is:
 
-\\[ z=\sum\_{i=1}^{n}w_ix_i+b \\]
+$$[ z=\sum\_{i=1}^{n}w_ix_i+b \]$$
 
 Don't be frightened by the sigma symbol.
 
@@ -386,19 +386,19 @@ It simply means:
 
 Our formula becomes:
 
-\\[ z=w_1x_1+w_2x_2+w_3x_3+b \\]
+$$[ z=w_1x_1+w_2x_2+w_3x_3+b \]$$
 
 Substitute the values:
 
-\\[ z=(0.5)(2)+(-0.2)(3)+(0.4)(0)+0.1 \\]
+$$[ z=(0.5)(2)+(-0.2)(3)+(0.4)(0)+0.1 \]$$
 
 Calculate each part:
 
-\\[ z=1.0-0.6+0+0.1 \\]
+$$[ z=1.0-0.6+0+0.1 \]$$
 
 Therefore:
 
-\\[ \boxed{z=0.5} \\]
+$$[ \boxed{z=0.5} \]$$
 
 **What does 0.5 mean?**
 
@@ -426,7 +426,7 @@ This is how the network combines different customer features.
 
 Now we have:
 
-\\[ z=0.5 \\]
+$$[ z=0.5 \]$$
 
 But the company wants a probability.
 
@@ -436,7 +436,7 @@ We use the sigmoid function.
 
 The formula is:
 
-\\[ \boxed{\sigma(z)=\frac{1}{1+e^{-z}}} \\]
+$$[ \boxed{\sigma(z)=\frac{1}{1+e^{-z}}} \]$$
 
 Let's understand the symbols:
 
@@ -462,31 +462,31 @@ For example:
 
 Our value is:
 
-\\[ z=0.5 \\]
+$$[ z=0.5 \]$$
 
 Substitute it:
 
-\\[ \hat y=\frac{1}{1+e^{-0.5}} \\]
+$$[ \hat y=\frac{1}{1+e^{-0.5}} \]$$
 
 Calculate the exponential:
 
-\\[ e^{-0.5}\approx0.60653 \\]
+$$[ e^{-0.5}\approx0.60653 \]$$
 
 Add 1:
 
-\\[ 1+0.60653=1.60653 \\]
+$$[ 1+0.60653=1.60653 \]$$
 
 Divide:
 
-\\[ \hat y=\frac{1}{1.60653} \\]
+$$[ \hat y=\frac{1}{1.60653} \]$$
 
-\\[ \boxed{\hat y=0.6225} \\]
+$$[ \boxed{\hat y=0.6225} \]$$
 
 Initial prediction
 
 The model predicts approximately:
 
-\\[ \boxed{62.25\\%} \\]
+$$[ \boxed{62.25\\%} \]$$
 
 This means the model estimates a 62.25% probability of cart abandonment.
 
@@ -504,7 +504,7 @@ Three important observations:
 
 ### **What is the value of e?**
 
-\\[ e\approx2.71828 \\]
+$$[ e\approx2.71828 \]$$
 
 It is a mathematical constant used in exponential functions.
 
@@ -535,23 +535,23 @@ Your PDF introduces the squared-error calculation.
 
 The formula used in the worked example is:
 
-\\[ \boxed{E=\frac12(y-\hat y)^2} \\]
+$$[ \boxed{E=\frac12(y-\hat y)^2} \]$$
 
 Where:
 
-- \\(E\\) = error or loss.
-- \\(y\\) = actual value.
-- \\(\hat y\\) = predicted value.
+- $$(E\)$$ = error or loss.
+- $$(y\)$$ = actual value.
+- $$(\hat y\) $$= predicted value.
 
 ### **Why do we square the error?**
 
 Suppose the difference is negative:
 
-\\[ 0-0.6225=-0.6225 \\]
+$$[ 0-0.6225=-0.6225 \]$$
 
 If we square it:
 
-\\[ (-0.6225)^2=0.3875 \\]
+$$[ (-0.6225)^2=0.3875 \]$$
 
 Squaring removes the negative sign.
 
@@ -564,26 +564,25 @@ The PDF explains that this makes differentiation easier because the 2 produced b
 ### **Let's calculate the loss**
 
 We know:
+$$[ y=0 \]$$
 
-\\[ y=0 \\]
-
-\\[ \hat y=0.6225 \\]
+$$[ \hat y=0.6225 \]$$
 
 Substitute:
 
-\\[ E=\frac12(0-0.6225)^2 \\]
+$$[ E=\frac12(0-0.6225)^2 \]$$
 
 First subtract:
 
-\\[ E=\frac12(-0.6225)^2 \\]
+$$[ E=\frac12(-0.6225)^2 \]$$
 
 Square:
 
-\\[ E=\frac12(0.3875) \\]
+$$[ E=\frac12(0.3875) \]$$
 
 Multiply:
 
-\\[ \boxed{E=0.1937} \\]
+$$[ \boxed{E=0.1937} \]$$
 
 **Our prediction error**
 
