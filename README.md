@@ -157,7 +157,7 @@ Inputs are the numbers entering the neuron.
 
 For example:
 
-\\[ x_1=2,\quad x_2=-1,\quad x_3=3 \\]
+$$[ x_1=2,\quad x_2=-1,\quad x_3=3 \\]$$
 
 ### **B. Weights (w)**
 
@@ -165,7 +165,7 @@ Weights determine how strongly each input influences the result.
 
 For example:
 
-\\[ w_1=0.8,\quad w_2=0.3,\quad w_3=0.5 \\]
+$$[ w_1=0.8,\quad w_2=0.3,\quad w_3=0.5 \\]$$
 
 A larger absolute weight means a stronger influence in the calculation.
 
