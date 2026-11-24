@@ -630,7 +630,7 @@ Your PDF includes a differentiation diagram on page 20.
 
 Imagine three connected stages:
 
-\\[ w\rightarrow z\rightarrow\hat y\rightarrow E \\]
+$$[ w\rightarrow z\rightarrow\hat y\rightarrow E \]$$
 
 The weight affects the weighted sum.
 
@@ -642,15 +642,15 @@ Therefore, to calculate how a weight affects the error, we consider all these re
 
 The chain rule formula is:
 
-\\[ \boxed{ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial\hat y} \times \frac{\partial\hat y}{\partial z} \times \frac{\partial z}{\partial w} } \\]
+$$[ \boxed{ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial\hat y} \times \frac{\partial\hat y}{\partial z} \times \frac{\partial z}{\partial w} } \]$$
 
 Let's understand each part.
 
 | Derivative                              | Meaning                                     |
 | --------------------------------------- | ------------------------------------------- |
-| \\(\frac{\partial E}{\partial\hat y}\\) | How prediction changes the error            |
-| \\(\frac{\partial\hat y}{\partial z}\\) | How the weighted sum changes the prediction |
-| \\(\frac{\partial z}{\partial w}\\)     | How the weight changes the weighted sum     |
+| $$(\frac{\partial E}{\partial\hat y}\)$$ | How prediction changes the error            |
+| $$(\frac{\partial\hat y}{\partial z}\)$$ | How the weighted sum changes the prediction |
+| $$(\frac{\partial z}{\partial w}\)$$    | How the weight changes the weighted sum     |
 
 Think of it as tracing the effect of a weight through the entire network until it reaches the final error.
 
@@ -658,33 +658,33 @@ Think of it as tracing the effect of a weight through the entire network until i
 
 The PDF uses the following formula:
 
-\\[ \delta=(\hat y-y)\hat y(1-\hat y) \\]
+$$[ \delta=(\hat y-y)\hat y(1-\hat y) \]$$
 
 We already know:
 
-\\[ \hat y=0.6225 \\]
+$$[ \hat y=0.6225 \]$$
 
-\\[ y=0 \\]
+$$[ y=0 \]$$
 
 First calculate the prediction difference:
 
-\\[ 0.6225-0=0.6225 \\]
+$$[ 0.6225-0=0.6225 \]$$
 
 Now calculate the sigmoid derivative:
 
-\\[ \hat y(1-\hat y) \\]
+$$[ \hat y(1-\hat y) \]$$
 
-\\[ =0.6225(1-0.6225) \\]
+$$[ =0.6225(1-0.6225) \]$$
 
-\\[ =0.6225(0.3775) \\]
+$$[ =0.6225(0.3775) \]$$
 
-\\[ \approx0.2350 \\]
+$$[ \approx0.2350 \]$$
 
 Multiply:
 
-\\[ \delta=0.6225\times0.2350 \\]
+$$[ \delta=0.6225\times0.2350 \]$$
 
-\\[ \boxed{\delta=0.1463} \\]
+$$[ \boxed{\delta=0.1463} \]$$
 
 This is called the local error signal.
 
@@ -706,7 +706,7 @@ A small gradient means a weaker effect.
 
 The PDF gives us:
 
-\\[ \boxed{\frac{\partial E}{\partial w_i}=\delta x_i} \\]
+$$[ \boxed{\frac{\partial E}{\partial w_i}=\delta x_i} \]$$
 
 This means:
 
@@ -716,40 +716,40 @@ Let's calculate the gradients.
 
 ### **Gradient for weight 1**
 
-\\[ \frac{\partial E}{\partial w_1} =0.1463\times2 \\]
+$$[ \frac{\partial E}{\partial w_1} =0.1463\times2 \]$$
 
-\\[ \boxed{0.2926} \\]
+$$[ \boxed{0.2926} \]$$
 
 ### **Gradient for weight 2**
 
-\\[ \frac{\partial E}{\partial w_2} =0.1463\times3 \\]
+$$[ \frac{\partial E}{\partial w_2} =0.1463\times3 \]$$
 
-\\[ \boxed{0.4389} \\]
+$$[ \boxed{0.4389} \]$$
 
 ### **Gradient for weight 3**
 
-\\[ \frac{\partial E}{\partial w_3} =0.1463\times0 \\]
+$$[ \frac{\partial E}{\partial w_3} =0.1463\times0 \]$$
 
-\\[ \boxed{0} \\]
+$$[ \boxed{0} \]$$
 
 ### **Gradient for bias**
 
 The bias gradient is:
 
-\\[ \frac{\partial E}{\partial b}=\delta \\]
+$$[ \frac{\partial E}{\partial b}=\delta \]$$
 
 Therefore:
 
-\\[ \boxed{0.1463} \\]
+$$[ \boxed{0.1463} \]$$
 
 ### **Summary of gradients**
 
 | Parameter | Gradient |
 | --------- | -------- |
-| \\(w_1\\) | 0.2926   |
-| \\(w_2\\) | 0.4389   |
-| \\(w_3\\) | 0        |
-| \\(b\\)   | 0.1463   |
+| $$(w_1\)$$ | 0.2926   |
+| $$(w_2\)$$| 0.4389   |
+| $$(w_3\)$$| 0        |
+| $$(b\)$$  | 0.1463   |
 
 Notice that weight 2 has the largest gradient.
 
@@ -775,10 +775,10 @@ The formula is:
 
 Where:
 
-- \\(w\_{new}\\) = new weight.
-- \\(w\_{old}\\) = previous weight.
-- \\(\alpha\\) = learning rate.
-- \\(\frac{\partial E}{\partial w}\\) = gradient.
+- $$(w\_{new}\)$$= new weight.
+- $$(w\_{old}\)$$ = previous weight.
+- $$(\alpha\)$$= learning rate.
+- $$(\frac{\partial E}{\partial w}\)$$ = gradient.
 
 ### **Why do we subtract the gradient?**
 
@@ -792,7 +792,7 @@ Therefore, we subtract it.
 
 Your PDF uses:
 
-\\[ \alpha=0.1 \\]
+$$[ \alpha=0.1 \]$$
 
 The learning rate determines the size of the adjustment.
 
@@ -819,77 +819,77 @@ Now we apply gradient descent to our original parameters.
 
 Remember:
 
-\\[ \alpha=0.1 \\]
+$$[ \alpha=0.1 \]$$
 
 ### **Updating weight 1**
 
 Original weight:
 
-\\[ w_1=0.5 \\]
+$$[ w_1=0.5 \]$$
 
 Gradient:
 
-\\[ 0.2926 \\]
+$$[ 0.2926 \]$$
 
 Substitute:
 
-\\[ w\_{1,new}=0.5-0.1(0.2926) \\]
+$$[ w\_{1,new}=0.5-0.1(0.2926) \]$$
 
-\\[ =0.5-0.02926 \\]
+$$[ =0.5-0.02926 \]$$
 
-\\[ \boxed{w\_{1,new}=0.4707} \\]
+$$[ \boxed{w\_{1,new}=0.4707} \]$$
 
 ### **Updating weight 2**
 
 Original weight:
 
-\\[ w_2=-0.2 \\]
+$$[ w_2=-0.2 \]$$
 
 Gradient:
 
-\\[ 0.4389 \\]
+$$[ 0.4389 \]$$
 
 Substitute:
 
-\\[ w\_{2,new}=-0.2-0.1(0.4389) \\]
+$$[ w\_{2,new}=-0.2-0.1(0.4389) \]$$
 
-\\[ =-0.2-0.04389 \\]
+$$[ =-0.2-0.04389 \]$$
 
-\\[ \boxed{w\_{2,new}=-0.2439} \\]
+$$[ \boxed{w\_{2,new}=-0.2439} \]$$
 
 ### **Updating weight 3**
 
 Original weight:
 
-\\[ w_3=0.4 \\]
+$$[ w_3=0.4 \]$$
 
 Gradient:
 
-\\[ 0 \\]
+$$[ 0 \]$$
 
 Therefore:
 
-\\[ w\_{3,new}=0.4-0.1(0) \\]
+$$[ w\_{3,new}=0.4-0.1(0) \]$$
 
-\\[ \boxed{w\_{3,new}=0.4} \\]
+$$[ \boxed{w\_{3,new}=0.4} \]$$
 
 ### **Updating bias**
 
 Original bias:
 
-\\[ b=0.1 \\]
+$$[ b=0.1 \]$$
 
 Gradient:
 
-\\[ 0.1463 \\]
+$$[ 0.1463 \]$$
 
 Substitute:
 
-\\[ b\_{new}=0.1-0.1(0.1463) \\]
+$$[ b\_{new}=0.1-0.1(0.1463) \]$$
 
-\\[ =0.1-0.01463 \\]
+$$[ =0.1-0.01463 \]$$
 
-\\[ \boxed{b\_{new}=0.0854} \\]
+$$[ \boxed{b\_{new}=0.0854} \]$$
 
 ### **Final updated parameters**
 
@@ -897,10 +897,10 @@ Substitute:
 
 | Parameter | Old value | New value |
 | --------- | --------- | --------- |
-| \\(w_1\\) | 0.5000    | 0.4707    |
-| \\(w_2\\) | -0.2000   | -0.2439   |
-| \\(w_3\\) | 0.4000    | 0.4000    |
-| \\(b\\)   | 0.1000    | 0.0854    |
+| $$(w_1\) $$| 0.5000    | 0.4707    |
+| $$(w_2\)$$ | -0.2000   | -0.2439   |
+| $$(w_3\)$$ | 0.4000    | 0.4000    |
+| $$(b\)$$  | 0.1000    | 0.0854    |
 
 The model has now adjusted its parameters based on the error.
 
@@ -918,37 +918,37 @@ The PDF explains this on page 25.
 
 Our new values are:
 
-\\[ w_1=0.4707 \\]
+$$[ w_1=0.4707 \]$$
 
-\\[ w_2=-0.2439 \\]
+$$[ w_2=-0.2439 \]$$
 
-\\[ w_3=0.4000 \\]
+$$[ w_3=0.4000 \]$$
 
-\\[ b=0.0854 \\]
+$$[ b=0.0854 \]$$
 
 The inputs remain the same:
 
-\\[ x_1=2,\quad x_2=3,\quad x_3=0 \\]
+$$[ x_1=2,\quad x_2=3,\quad x_3=0 \]$$
 
 ### **Calculate the new weighted sum**
 
-\\[ z\_{new}=w_1x_1+w_2x_2+w_3x_3+b \\]
+$$[ z\_{new}=w_1x_1+w_2x_2+w_3x_3+b \]$$
 
 Substitute:
 
-\\[ z\_{new}=(0.4707)(2)+(-0.2439)(3)+(0.4000)(0)+0.0854 \\]
+$$[ z\_{new}=(0.4707)(2)+(-0.2439)(3)+(0.4000)(0)+0.0854 \]$$
 
 Calculate:
 
-\\[ =0.9414-0.7317+0+0.0854 \\]
+$$[ =0.9414-0.7317+0+0.0854 \]$$
 
-\\[ \boxed{z\_{new}\approx0.2951} \\]
+$$[ \boxed{z\_{new}\approx0.2951} \]$$
 
 ### **Calculate the new sigmoid prediction**
 
-\\[ \hat y\_{new}=\frac{1}{1+e^{-0.2951}} \\]
+$$[ \hat y\_{new}=\frac{1}{1+e^{-0.2951}} \]$$
 
-\\[ \boxed{\hat y\_{new}\approx0.5732} \\]
+$$[ \boxed{\hat y\_{new}\approx0.5732} \]$$
 
 The new prediction is approximately 57.32%.
 
@@ -972,15 +972,15 @@ The prediction has moved closer to the actual target of zero.
 
 Initially, the model predicted:
 
-\\[ 62.25\\% \\]
+$$[ 62.25\\% \]$$
 
 After updating its parameters, our recalculation gives:
 
-\\[ 57.32\\% \\]
+$$[ 57.32\\% \]$$
 
 The actual target was:
 
-\\[ 0 \\]
+$$[ 0 \]$$
 
 The model reduced its prediction, moving closer to the actual target.
 
